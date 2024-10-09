@@ -55,9 +55,3 @@ def mean_mediam_mode(df):
     print(f"75th Percentile: {Perc75}")
     print(f"Clean Average (excluding outliers): {Clean_Avg}")
 
-def box_plot(df):
-    col = 'Area'
-    df['ind'] = pd.Series(df.index).apply(lambda i: i% 50)
-    df.pivot('ind','Target')[col].plot(kind='box')
-    plt.show()
-box_plot(df)
