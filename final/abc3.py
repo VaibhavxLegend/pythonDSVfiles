@@ -55,3 +55,16 @@ def mean_mediam_mode(df):
     print(f"75th Percentile: {Perc75}")
     print(f"Clean Average (excluding outliers): {Clean_Avg}")
 
+def box_plot(df):
+    col = 'Area'
+    df['ind'] = pd.Series(df.index)
+    pivot_df = df.pivot(index='ind', columns='Target', values=col)
+    pivot_df.plot(kind='box')
+    plt.show()
+
+def scatter_plot(df):
+    df.plot(kind="scatter",
+    x="Major_Axis_Length", y="Minor_Axis_Length")
+    plt.title("Length vs Width")
+    plt.show()
+scatter_plot(df)
